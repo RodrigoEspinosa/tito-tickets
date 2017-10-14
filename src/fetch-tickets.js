@@ -36,10 +36,20 @@ module.exports = async () => {
     const response = await fetch(TICKETS_URL, options)
     const tickets = await response.json()
 
+    // If there are not tickets, return an empty array.
+    if (!tickets) {
+      return []
+    }
+
+    // Filter the secret tickets.
+    const filteredTickets = tickets.data.filter(
+      ({ attributes = {} }) => !attributes.secret
+    )
+
     // Process the tickets.
     return process.env.MINIFY_DATA_OUTPUT
-      ? tickets.data.map(minifyDataOutput)
-      : tickets.data
+      ? filteredTickets.map(minifyDataOutput)
+      : filteredTickets
   } catch (error) {
     return `There was an error: ${error.message}`
   }
