@@ -18,6 +18,7 @@ module.exports = ticket => ({
   price: getAttribute(ticket, 'price'),
   state: getAttribute(ticket, 'state'),
   title: getAttribute(ticket, 'title'),
+  startAt: getAttribute(ticket, 'start-at'),
   quantity: getAttribute(ticket, 'quantity'),
   quantitySold: getAttribute(ticket, 'quantity-sold')
 })
