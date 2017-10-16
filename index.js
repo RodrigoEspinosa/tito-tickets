@@ -9,7 +9,7 @@ const ticketsLongPolling = require('./src/tickets-long-polling')
 // This is for the initial handshake and return the
 // first state of the ticket (tito calls it "releases").
 const server = micro(async (req, res) => {
-  return await fetchTickets()
+  return fetchTickets()
 })
 
 // Open the websockets using the server created with `micro`.
