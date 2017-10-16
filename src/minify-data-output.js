@@ -15,6 +15,7 @@ const getAttributes = ticket => ticket.attributes || {}
 const getAttribute = (ticket, attr) => getAttributes(ticket)[attr]
 
 module.exports = ticket => ({
+  id: ticket.id,
   price: getAttribute(ticket, 'price'),
   state: getAttribute(ticket, 'state'),
   title: getAttribute(ticket, 'title'),
