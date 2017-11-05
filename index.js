@@ -1,4 +1,3 @@
-require('dotenv-safe').load()
 const micro = require('micro')
 
 const fetchTickets = require('./src/fetch-tickets')

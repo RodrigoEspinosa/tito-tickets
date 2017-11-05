@@ -1,3 +1,14 @@
 {
-  "TITO_API_BASE_URL": "https://api.tito.io/v2"
+  "TITO_API_BASE_URL": {
+    "default": "https://api.tito.io/v2"
+  },
+  "TITO_TOKEN": {
+    "required": true
+  },
+  "TITO_ACCOUNT": {
+    "required": true
+  },
+  "TITO_EVENT": {
+    "required": true
+  }
 }
